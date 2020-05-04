@@ -12,8 +12,8 @@ export class SyncService {
   test(): Observable<ITest[]> {
     return this.http.get<ITest[]>('http://localhost:3000/', {
       params: {
-        appid: 'id1234',
-        cnt: '5'
+        test: 'message',
+        cnt: '1'
       }
     });
   }
