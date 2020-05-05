@@ -1,0 +1,6 @@
+<p>Main Dashboard</p>
+<ul>
+    <li *ngFor="let case of cases">
+        {{ districts[case["_id"]] }} : {{ case["count"] }}
+    </li>
+</ul>

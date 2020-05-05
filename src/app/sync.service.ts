@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ITest } from './Test';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,24 @@ export class SyncService {
   }
 
   test2(): Observable<ITest[]> {
-    return this.http.post<ITest[]>('http://localhost:3000/', { test : "new"});
+    return this.http.post<ITest[]>('http://localhost:3000/', {
+      test: "new"
+    });
+  }
+
+  getAllCases(): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:3000/all-cases').pipe(
+      map((data) => {
+        return data;
+      })
+    );
+  }
+
+  getNumbersByDistrict(): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:3000/numbers-by-district').pipe(
+      map((data) => {
+        return data;
+      })
+    );
   }
 }
