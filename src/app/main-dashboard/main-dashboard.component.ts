@@ -8,8 +8,8 @@ import { Districts } from '../districts';
   styleUrls: ['./main-dashboard.component.css']
 })
 export class MainDashboardComponent implements OnInit {
-  cases:any;
-  districts:any;
+  cases: any;
+  districts: any;
 
   constructor(private syncService: SyncService) {
     this.districts = Districts;

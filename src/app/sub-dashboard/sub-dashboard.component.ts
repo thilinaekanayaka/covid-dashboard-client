@@ -9,16 +9,19 @@ import { SyncService } from '../sync.service';
   styleUrls: ['./sub-dashboard.component.css']
 })
 export class SubDashboardComponent implements OnInit {
-  cases:any;
+  cases: any;
+  districtID: any;
   district: any;
 
-  constructor(private route: ActivatedRoute, private syncService: SyncService) { }
+  constructor(private route: ActivatedRoute, private syncService: SyncService) {
+    this.districtID = this.route.snapshot.paramMap.get('id');
+  }
 
   ngOnInit(): void {
-    this.district = Districts[this.route.snapshot.paramMap.get('id')];
-    this.syncService.getCasesByDistrict(this.route.snapshot.paramMap.get('id')).subscribe(data => {
-      console.log(data);
+    this.district = Districts[this.districtID];
+    this.syncService.getCasesByDistrict(this.districtID).subscribe(data => {
       this.cases = data;
+      console.log(data)
     });
   }
 

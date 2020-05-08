@@ -1,5 +1,5 @@
-<h2>{{ district }} District</h2>
-<a *ngFor="let case of cases" class="col-1-4">
+<h2><a routerLink="/dashboard">Main</a> > {{ district }} District</h2>
+<a *ngFor="let case of cases" class="col-1-4" routerLink="/case-detailed/{{ case['_id'] }}">
     <div class="module">
         <h4>{{ case["name"] }}</h4>
     </div>
