@@ -1,4 +1,4 @@
-export const status = {
+export const Status = {
     0: 'Unknown',
     1: 'Suspected',
     2: 'Confirmed',

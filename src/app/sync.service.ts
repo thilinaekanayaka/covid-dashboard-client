@@ -40,4 +40,16 @@ export class SyncService {
       })
     );
   }
+
+  getCasesByDistrict(id: any): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:3000/cases-by-district', {
+      params: {
+        _id: id
+      }
+    }).pipe(
+      map((data) => {
+        return data;
+      })
+    );
+  }
 }

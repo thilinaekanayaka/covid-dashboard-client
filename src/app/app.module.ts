@@ -7,6 +7,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 import { SubDashboardComponent } from './sub-dashboard/sub-dashboard.component';
 import { DetailedViewComponent } from './detailed-view/detailed-view.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DetailedViewComponent } from './detailed-view/detailed-view.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

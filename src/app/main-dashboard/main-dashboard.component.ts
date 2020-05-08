@@ -17,7 +17,6 @@ export class MainDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.syncService.getNumbersByDistrict().subscribe(data => {
-      console.log(data);
       this.cases = data["cases"];
     });
   }
