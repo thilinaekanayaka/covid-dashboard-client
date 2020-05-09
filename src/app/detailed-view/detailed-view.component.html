@@ -1,3 +1,53 @@
-<h2><a routerLink="/dashboard">Main</a> > <a routerLink="/district-dashboard/{{ districtID }}">{{ district }} District</a></h2>
-<div>{{ name }}</div>
-<div>{{ age }}</div>
+<h2><a routerLink="/dashboard">Main</a> > <a routerLink="/district-dashboard/{{ districtID }}">{{ district }}
+        District</a></h2>
+
+<div class="detailed-info">
+    <div class="col-1-4">
+        <label class="attr-name">
+            Name :
+        </label>
+        <label class="data-field">
+            {{ name }}
+        </label>
+    </div>
+    <div class="col-1-4">
+        <label class="attr-name">
+            Age :
+        </label>
+        <label class="data-field">
+            {{ age }}
+        </label>
+    </div>
+    <div class="col-1-4">
+        <label class="attr-name">
+            Gender :
+        </label>
+        <label class="data-field">
+            {{ gender }}
+        </label>
+    </div>
+    <div class="col-1-4">
+        <label class="attr-name">
+            Status :
+        </label>
+        <label class="data-field status-field status-{{ status }}">
+            {{ status }}
+        </label>
+    </div>
+    <div class="col-1-4">
+        <label class="attr-name">
+            District :
+        </label>
+        <label class="data-field">
+            {{ district }}
+        </label>
+    </div>
+    <div class="col-1-4">
+        <label class="attr-name">
+            Address :
+        </label>
+        <label class="data-field">
+            {{ address }}
+        </label>
+    </div>
+</div>

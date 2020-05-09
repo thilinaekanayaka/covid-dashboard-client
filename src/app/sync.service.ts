@@ -66,7 +66,6 @@ export class SyncService {
   }
 
   createCase(caseData: any): Observable<ITest[]> {
-    console.log("Sync service", caseData)
     return this.http.post<any[]>('http://localhost:3000/create-case',
       caseData
     ).pipe(

@@ -4,7 +4,7 @@
         <label for="name">
             Name
         </label>
-        <input id="name" type="text" formControlName="name">
+        <input id="name" type="text" formControlName="name" required>
     </div>
 
     <div class="col-1-4">
@@ -53,7 +53,7 @@
         <input id="address" type="text" formControlName="address">
     </div>
     <div class="col-1-1">
-        <button class="button" type="submit">Create</button>
+        <button class="button" [disabled]="!createCaseForm.valid" type="submit">Create</button>
     </div>
 </form>
 <div class="col-1-1">

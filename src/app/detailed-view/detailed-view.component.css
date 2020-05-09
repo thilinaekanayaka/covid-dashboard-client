@@ -5,3 +5,49 @@ h2 {
 a {
     text-decoration: none;
 }
+.col-1-4 {
+    width: 21%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 8px;
+}
+[class*='col-'] {
+    float: left;
+    padding-right: 20px;
+    padding: 20px;
+}
+.data-field {
+    margin-top: 10px;
+}
+label {
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #666;
+    line-height: 22px;
+}
+.detailed-info {
+    margin-top: 50px;
+}
+.attr-name{
+    font-weight: 600;
+}
+.status-field{
+    font-weight: 600;
+}
+.status-Unknown{
+    color: #3f525c;
+}
+.status-Suspected{
+    color: #f3a207;
+}
+.status-Confirmed{
+    color: #dc3545;
+}
+.status-Recovered{
+    color: #a4cd39;
+}
+.status-Deceased{
+    color: #000;
+}

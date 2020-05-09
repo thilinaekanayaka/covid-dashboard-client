@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Districts } from '../districts';
 import { Genders } from '../gender';
 import { Statuses } from '../status';
@@ -24,12 +24,12 @@ export class CreateCaseComponent implements OnInit {
     this.statuses = Statuses;
     this.message = '';
     this.createCaseForm = this.formBuilder.group({
-      name: '',
-      age: '',
-      gender: '',
-      status: '',
-      district: '',
-      address: ''
+      name: ['', Validators.required ],
+      age: ['', Validators.required ],
+      gender: ['', Validators.required ],
+      status: ['', Validators.required ],
+      district: ['', Validators.required ],
+      address: ['', Validators.required ]
     });
   }
 
@@ -49,7 +49,6 @@ export class CreateCaseComponent implements OnInit {
     }
     this.createCaseForm.reset();
     this.syncService.createCase(this.case).subscribe(data => {
-      console.log("response", data["message"]);
       this.message = data["message"];
     });
   }

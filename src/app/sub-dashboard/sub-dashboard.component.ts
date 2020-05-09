@@ -24,7 +24,6 @@ export class SubDashboardComponent implements OnInit {
     this.district = Districts[this.districtID];
     this.syncService.getCasesByDistrict(this.districtID).subscribe(data => {
       this.cases = data;
-      console.log(data)
     });
   }
 

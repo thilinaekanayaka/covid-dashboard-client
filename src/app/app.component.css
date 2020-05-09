@@ -4,3 +4,9 @@ h1 {
     font-size: 250%;
     text-align: center;
 }
+a {
+    text-decoration: none;
+}
+a:visited {
+    color: #369;
+}
