@@ -12,6 +12,21 @@ a {
     margin: 5px;
     border-radius: 8px;
 }
+.col-1-1 {
+    width: 100%;
+}
+button {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #669999;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
 [class*='col-'] {
     float: left;
     padding-right: 20px;
@@ -50,4 +65,15 @@ label {
 }
 .status-Deceased{
     color: #000;
+}
+@media (max-width: 1024px) {
+    .grid {
+      margin: 0;
+    }
+    .col-1-4 {
+      width: 85%;
+    }
+    [class*='col-'] {
+      float: none;
+    }
 }

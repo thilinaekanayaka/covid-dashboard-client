@@ -4,6 +4,14 @@
 <div class="detailed-info">
     <div class="col-1-4">
         <label class="attr-name">
+            Case ID :
+        </label>
+        <label class="data-field">
+            {{ caseID }}
+        </label>
+    </div>
+    <div class="col-1-4">
+        <label class="attr-name">
             Name :
         </label>
         <label class="data-field">
@@ -50,4 +58,9 @@
             {{ address }}
         </label>
     </div>
+</div>
+
+<div class="col-1-1">
+    <button routerLink="/create-case" class="button" type="submit">Edit case details</button>
+    <button routerLink="/district-dashboard/{{ districtID }}" (click)="removeCase()" class="button" type="submit">Remove</button>
 </div>

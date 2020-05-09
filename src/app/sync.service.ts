@@ -74,4 +74,16 @@ export class SyncService {
       })
     );;
   }
+
+  removeCase(id: any): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:3000/remove-case', {
+      params: {
+        _id: id
+      }
+    }).pipe(
+      map((data) => {
+        return data;
+      })
+    );
+  }
 }

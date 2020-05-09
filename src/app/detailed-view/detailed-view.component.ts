@@ -16,6 +16,7 @@ export class DetailedViewComponent implements OnInit {
   districtID: any;
   statuses: any;
   genders: any;
+  message:any;
   name: any = '';
   age: any = '';
   status:any = '';
@@ -26,6 +27,7 @@ export class DetailedViewComponent implements OnInit {
     this.caseID = this.route.snapshot.paramMap.get('id');
     this.statuses = Statuses;
     this.genders = Genders;
+    this.message = '';
   }
 
   ngOnInit(): void {
@@ -37,6 +39,12 @@ export class DetailedViewComponent implements OnInit {
       this.gender = this.genders[data["gender"]];
       this.status = this.statuses[data["status"]];
       this.address = data["location"]["address"];
+    });
+  }
+
+  removeCase() {
+    this.syncService.removeCase(this.caseID).subscribe(data => {
+      this.message = data["message"];
     });
   }
 
