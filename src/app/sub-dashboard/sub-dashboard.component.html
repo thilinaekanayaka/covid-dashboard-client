@@ -1,7 +1,14 @@
 <h2><a routerLink="/dashboard">Main</a> > {{ district }} District</h2>
+<div class="legend-section">
+    <span class="legend-first legend-unknown">Unknown :</span>
+    <span class="legend legend-suspected">Suspected :</span>
+    <span class="legend legend-confirmed">Confirmed :</span>
+    <span class="legend legend-recovered">Recovered :</span>
+    <span class="legend legend-deceased">Deceased :</span>
+</div>
 <a *ngFor="let case of cases" class="col-1-4" routerLink="/case-detailed/{{ case['_id'] }}">
-    <div class="module">
-        <h4>{{ case['_id'] }}</h4>
+    <div class="module module-{{ statuses[case['status']] }}">
+        <h5>Case ID : {{ case['_id'] }}</h5>
         <h4>{{ case["name"] }}</h4>
     </div>
 </a>

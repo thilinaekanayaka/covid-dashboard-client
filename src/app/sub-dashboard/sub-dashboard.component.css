@@ -23,6 +23,63 @@ h3 {
 h4 {
   position: relative;
 }
+.legend-section{
+  margin-bottom: 20px;
+}
+.legend-first{
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 20px;
+}
+.legend{
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 20px;
+  margin-left: 40px;
+}
+.legend-unknown::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  margin-left: 10px;
+  width: 16px;
+  height: 16px;
+  background-color: #3f525c;
+}
+.legend-suspected::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  margin-left: 10px;
+  width: 16px;
+  height: 16px;
+  background-color: #f3a207;
+}
+.legend-confirmed::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  margin-left: 10px;
+  width: 16px;
+  height: 16px;
+  background-color: #dc3545;
+}
+.legend-recovered::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  margin-left: 10px;
+  width: 16px;
+  height: 16px;
+  background-color: #a4cd39;
+}
+.legend-deceased::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  margin-left: 10px;
+  width: 16px;
+  height: 16px;
+  background-color: #000;
+}
 .grid {
   margin: 0;
 }
@@ -36,8 +93,22 @@ h4 {
   color: #eee;
   max-height: 120px;
   min-width: 120px;
-  background-color: #3f525c;
   border-radius: 8px;
+}
+.module-Unknown{
+  background-color: #3f525c;
+}
+.module-Suspected{
+  background-color: #f3a207;
+}
+.module-Confirmed{
+  background-color: #dc3545;
+}
+.module-Recovered{
+  background-color: #a4cd39;
+}
+.module-Deceased{
+  background-color: #000;
 }
 .module:hover {
   background-color: #eee;
