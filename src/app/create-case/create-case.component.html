@@ -1,1 +1,55 @@
-<p>create-case works!</p>
+<form [formGroup]="createCaseForm" (ngSubmit)="onSubmit(createCaseForm.value)">
+    <div>
+        <label for="name">
+            Name
+        </label>
+        <input id="name" type="text" formControlName="name">
+    </div>
+
+    <div>
+        <label for="age">
+            Age
+        </label>
+        <input id="age" type="text" formControlName="age">
+    </div>
+    <div>
+        <label for="gender">
+            Gender
+        </label>
+        <select formControlName="gender">
+            <option [ngValue]="null" disabled>Choose the gender</option>
+            <option *ngFor="let gender of genders" [ngValue]="gender">
+                {{ gender }}
+            </option>
+        </select>
+    </div>
+    <div>
+        <label for="status">
+            Status
+        </label>
+        <select formControlName="status">
+            <option [ngValue]="null" disabled>Choose the status</option>
+            <option *ngFor="let status of statuses" [ngValue]="status">
+                {{ status }}
+            </option>
+        </select>
+    </div>
+    <div>
+        <label for="district">
+            District
+        </label>
+        <select formControlName="district">
+            <option [ngValue]="null" disabled>Choose the district</option>
+            <option *ngFor="let district of districts" [ngValue]="district">
+                {{ district }}
+            </option>
+        </select>
+    </div>
+    <div>
+        <label for="address">
+            Address
+        </label>
+        <input id="address" type="text" formControlName="address">
+    </div>
+    <button class="button" type="submit">Create</button>
+</form>
