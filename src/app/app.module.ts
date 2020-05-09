@@ -9,6 +9,7 @@ import { DetailedViewComponent } from './detailed-view/detailed-view.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CreateCaseComponent } from './create-case/create-case.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditCaseComponent } from './edit-case/edit-case.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MainDashboardComponent,
     SubDashboardComponent,
     DetailedViewComponent,
-    CreateCaseComponent
+    CreateCaseComponent,
+    EditCaseComponent
   ],
   imports: [
     BrowserModule,

@@ -61,6 +61,6 @@
 </div>
 
 <div class="col-1-1">
-    <button routerLink="/create-case" class="button" type="submit">Edit case details</button>
+    <button routerLink="/edit-case/{{ caseID }}" class="button" type="submit">Edit case details</button>
     <button routerLink="/district-dashboard/{{ districtID }}" (click)="removeCase()" class="button" type="submit">Remove</button>
 </div>

@@ -24,12 +24,12 @@ export class CreateCaseComponent implements OnInit {
     this.statuses = Statuses;
     this.message = '';
     this.createCaseForm = this.formBuilder.group({
-      name: ['', Validators.required ],
-      age: ['', Validators.required ],
-      gender: ['', Validators.required ],
-      status: ['', Validators.required ],
-      district: ['', Validators.required ],
-      address: ['', Validators.required ]
+      name: ['', Validators.required],
+      age: ['', Validators.required],
+      gender: ['', Validators.required],
+      status: ['', Validators.required],
+      district: ['', Validators.required],
+      address: ['', Validators.required]
     });
   }
 
