@@ -1,0 +1,64 @@
+input, select {
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+input {
+    margin-top: 10px;
+    width: calc(100% - 10px);
+}
+select {
+    margin-top: 10px;
+    width: 100%;
+}
+button {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #669999;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+h2 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a {
+    text-decoration: none;
+}
+label, p {
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #666;
+    line-height: 22px;
+}
+.col-1-4 {
+    width: 32%;
+}
+[class*='col-'] {
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.col-1-1 {
+    width: 100%;
+    text-align: center;
+}
+.message {
+    color: #a4cd39;
+    font-size: 18px;
+    font-weight: 600;
+}
+@media (max-width: 1024px) {
+    .col-1-4 {
+      width: 100%;
+    }
+    [class*='col-'] {
+      float: none;
+    }
+}

@@ -1,3 +1,6 @@
+<div>
+    <button routerLink="/create-case" class="button" type="submit">Add new case</button>
+</div>
 <div class="legend"><span class="legend-high">More than 3 cases</span><span class="legend-low">Less than or equal to 3 cases</span></div>
 <a *ngFor="let case of cases" class="col-1-4" routerLink="/district-dashboard/{{ case['_id'] }}">
     <div class="module" [ngClass]="{'status-high': case['count'] > 3}">
