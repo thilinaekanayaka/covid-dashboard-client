@@ -1,66 +1,72 @@
-<h2><a routerLink="/dashboard">Main</a> > <a routerLink="/district-dashboard/{{ districtID }}">{{ district }}
-        District</a></h2>
+<div *ngIf="caseAvailability">
+    <h2><a routerLink="/dashboard">Main</a> > <a routerLink="/district-dashboard/{{ districtID }}">{{ district }}
+            District</a></h2>
 
-<div class="detailed-info">
-    <div class="col-1-4">
-        <label class="attr-name">
-            Case ID :
-        </label>
-        <label class="data-field">
-            {{ caseID }}
-        </label>
+    <div class="detailed-info">
+        <div class="col-1-4">
+            <label class="attr-name">
+                Case ID :
+            </label>
+            <label class="data-field">
+                {{ caseID }}
+            </label>
+        </div>
+        <div class="col-1-4">
+            <label class="attr-name">
+                Name :
+            </label>
+            <label class="data-field">
+                {{ name }}
+            </label>
+        </div>
+        <div class="col-1-4">
+            <label class="attr-name">
+                Age :
+            </label>
+            <label class="data-field">
+                {{ age }}
+            </label>
+        </div>
+        <div class="col-1-4">
+            <label class="attr-name">
+                Gender :
+            </label>
+            <label class="data-field">
+                {{ gender }}
+            </label>
+        </div>
+        <div class="col-1-4">
+            <label class="attr-name">
+                Status :
+            </label>
+            <label class="data-field status-field status-{{ status }}">
+                {{ status }}
+            </label>
+        </div>
+        <div class="col-1-4">
+            <label class="attr-name">
+                District :
+            </label>
+            <label class="data-field">
+                {{ district }}
+            </label>
+        </div>
+        <div class="col-1-4">
+            <label class="attr-name">
+                Address :
+            </label>
+            <label class="data-field">
+                {{ address }}
+            </label>
+        </div>
     </div>
-    <div class="col-1-4">
-        <label class="attr-name">
-            Name :
-        </label>
-        <label class="data-field">
-            {{ name }}
-        </label>
-    </div>
-    <div class="col-1-4">
-        <label class="attr-name">
-            Age :
-        </label>
-        <label class="data-field">
-            {{ age }}
-        </label>
-    </div>
-    <div class="col-1-4">
-        <label class="attr-name">
-            Gender :
-        </label>
-        <label class="data-field">
-            {{ gender }}
-        </label>
-    </div>
-    <div class="col-1-4">
-        <label class="attr-name">
-            Status :
-        </label>
-        <label class="data-field status-field status-{{ status }}">
-            {{ status }}
-        </label>
-    </div>
-    <div class="col-1-4">
-        <label class="attr-name">
-            District :
-        </label>
-        <label class="data-field">
-            {{ district }}
-        </label>
-    </div>
-    <div class="col-1-4">
-        <label class="attr-name">
-            Address :
-        </label>
-        <label class="data-field">
-            {{ address }}
-        </label>
+
+    <div class="col-1-1">
+        <button [disabled]="!online" routerLink="/edit-case/{{ caseID }}" class="button" type="submit">Edit case details</button>
+        <button [disabled]="!online" routerLink="/district-dashboard/{{ districtID }}" (click)="removeCase()" class="button"
+            type="submit">Remove</button>
     </div>
 </div>
-
-<div class="col-1-1">
-    <button routerLink="/edit-case/{{ caseID }}" class="button" type="submit">Edit case details</button>
-    <button routerLink="/district-dashboard/{{ districtID }}" (click)="removeCase()" class="button" type="submit">Remove</button>
+<div class="unavailable" *ngIf="!caseAvailability">
+    Case unavailable at this time...
 </div>

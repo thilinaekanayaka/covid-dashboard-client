@@ -9,7 +9,7 @@ export class ConnectionService {
 
   constructor() { }
 
-  checkOnline$() {
+  checkOnline() {
     return merge<boolean>(
       fromEvent(window, 'offline').pipe(map(() => false)),
       fromEvent(window, 'online').pipe(map(() => true)),

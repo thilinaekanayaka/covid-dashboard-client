@@ -17,8 +17,7 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.connectionService.checkOnline$().subscribe(isOnline => {
-      console.log("isOnline", isOnline);
+    this.connectionService.checkOnline().subscribe(isOnline => {
       if (isOnline) {
         this.offlineMessage = '';
         this.offline = false;

@@ -18,7 +18,7 @@ export class MainDashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.connectionService.checkOnline$().subscribe(isOnline => {
+    this.connectionService.checkOnline().subscribe(isOnline => {
       if (isOnline) {
         this.syncService.getNumbersByDistrict().subscribe(data => {
           this.cases = data["cases"];

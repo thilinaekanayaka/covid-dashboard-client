@@ -23,7 +23,7 @@ export class SubDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.district = Districts[this.districtID];
-    this.connectionService.checkOnline$().subscribe(isOnline => {
+    this.connectionService.checkOnline().subscribe(isOnline => {
       if (isOnline) {
         this.syncService.getCasesByDistrict(this.districtID).subscribe(data => {
           this.cases = data;
@@ -34,5 +34,4 @@ export class SubDashboardComponent implements OnInit {
       }
     });
   }
-
 }
