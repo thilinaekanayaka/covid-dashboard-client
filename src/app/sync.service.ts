@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ITest } from './Test';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -10,8 +9,12 @@ import { map } from 'rxjs/operators';
 export class SyncService {
   constructor(private http: HttpClient) { }
 
+  addAuthHeader() {
+    return 'heXdXxRU33TrW24S';
+  }
+
   getAllCases(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:3000/all-cases').pipe(
+    return this.http.get<any[]>('http://localhost:3000/all-cases', { headers: { 'auth_token': this.addAuthHeader() } }).pipe(
       map((data) => {
         return data;
       })
@@ -19,7 +22,7 @@ export class SyncService {
   }
 
   getNumbersByDistrict(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:3000/numbers-by-district').pipe(
+    return this.http.get<any[]>('http://localhost:3000/numbers-by-district', { headers: { 'auth_token': this.addAuthHeader() } }).pipe(
       map((data) => {
         return data;
       })
@@ -30,6 +33,9 @@ export class SyncService {
     return this.http.get<any[]>('http://localhost:3000/cases-by-district', {
       params: {
         _id: id
+      },
+      headers: {
+        'auth_token': this.addAuthHeader()
       }
     }).pipe(
       map((data) => {
@@ -42,6 +48,9 @@ export class SyncService {
     return this.http.get<any[]>('http://localhost:3000/case-by-id', {
       params: {
         _id: id
+      },
+      headers: {
+        'auth_token': this.addAuthHeader()
       }
     }).pipe(
       map((data) => {
@@ -50,9 +59,12 @@ export class SyncService {
     );
   }
 
-  createCase(caseData: any): Observable<ITest[]> {
+  createCase(caseData: any): Observable<any[]> {
     return this.http.post<any[]>('http://localhost:3000/create-case',
-      caseData
+      caseData,
+      {
+        headers: { 'auth_token': this.addAuthHeader() }
+      }
     ).pipe(
       map((data) => {
         return data;
@@ -60,9 +72,12 @@ export class SyncService {
     );;
   }
 
-  editCase(caseData: any): Observable<ITest[]> {
+  editCase(caseData: any): Observable<any[]> {
     return this.http.post<any[]>('http://localhost:3000/edit-case',
-      caseData
+      caseData,
+      {
+        headers: { 'auth_token': this.addAuthHeader() }
+      }
     ).pipe(
       map((data) => {
         return data;
@@ -74,6 +89,9 @@ export class SyncService {
     return this.http.get<any[]>('http://localhost:3000/remove-case', {
       params: {
         _id: id
+      },
+      headers: {
+        'auth_token': this.addAuthHeader()
       }
     }).pipe(
       map((data) => {
