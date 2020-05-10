@@ -10,3 +10,11 @@ a {
 a:visited {
     color: #369;
 }
+.offline-banner {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background: #dc3545;
+    text-align: center;
+    padding: 8px;
+    border-radius: 8px;
+}

@@ -10,21 +10,6 @@ import { map, catchError } from 'rxjs/operators';
 export class SyncService {
   constructor(private http: HttpClient) { }
 
-  test(): Observable<ITest[]> {
-    return this.http.get<ITest[]>('http://localhost:3000/', {
-      params: {
-        test: 'message',
-        cnt: '1'
-      }
-    });
-  }
-
-  test2(): Observable<ITest[]> {
-    return this.http.post<ITest[]>('http://localhost:3000/', {
-      test: "new"
-    });
-  }
-
   getAllCases(): Observable<any[]> {
     return this.http.get<any[]>('http://localhost:3000/all-cases').pipe(
       map((data) => {

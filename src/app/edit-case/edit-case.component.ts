@@ -16,7 +16,7 @@ export class EditCaseComponent implements OnInit {
   editCaseForm: any;
   districts: any;
   genders: any;
-  statuses; any;
+  statuses: any;
   case: any;
   message: any;
 
@@ -27,7 +27,6 @@ export class EditCaseComponent implements OnInit {
     this.statuses = Statuses;
     this.message = '';
     this.syncService.getCaseByID(this.caseID).subscribe(data => {
-      console.log("getCaseByID", data)
       this.case = data;
       this.editCaseForm = this.formBuilder.group({
         id: [{ value: this.caseID, disabled: true }, Validators.required],
@@ -45,7 +44,6 @@ export class EditCaseComponent implements OnInit {
   }
 
   onSubmit(caseData: any) {
-    console.log("submit", caseData)
     this.case = {
       "_id": this.caseID,
       "name": caseData["name"],

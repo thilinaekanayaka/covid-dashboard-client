@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SyncService } from './sync.service';
+import { ConnectionService } from './connection.service';
 
 @Component({
   selector: 'app-root',
@@ -8,18 +8,25 @@ import { SyncService } from './sync.service';
 })
 export class AppComponent {
   title = 'Corvid-19 Status Dashboard';
+  offlineMessage: any;
+  offline: Boolean;
 
-  constructor(private syncService: SyncService) {
-    // this.syncService.test().subscribe(data => {
-    //   console.log("AppComponent test : " + JSON.stringify(data));
-    // })
+  constructor(private connectionService: ConnectionService) {
+    this.offlineMessage = '';
+    this.offline = false;
+  }
 
-    // this.syncService.test2().subscribe(data => {
-    //   console.log("AppComponent test 2 : " + JSON.stringify(data));
-    // })
-
-    // this.syncService.getAllCases().subscribe(data => {
-    //   console.log(data);
-    // });
+  ngOnInit(): void {
+    this.connectionService.checkOnline$().subscribe(isOnline => {
+      console.log("isOnline", isOnline);
+      if (isOnline) {
+        this.offlineMessage = '';
+        this.offline = false;
+      }
+      else {
+        this.offlineMessage = "You are offline. Showing cached data...";
+        this.offline = true;
+      }
+    });
   }
 }
