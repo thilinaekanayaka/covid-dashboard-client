@@ -75,6 +75,16 @@ export class SyncService {
     );;
   }
 
+  editCase(caseData: any): Observable<ITest[]> {
+    return this.http.post<any[]>('http://localhost:3000/edit-case',
+      caseData
+    ).pipe(
+      map((data) => {
+        return data;
+      })
+    );;
+  }
+
   removeCase(id: any): Observable<any[]> {
     return this.http.get<any[]>('http://localhost:3000/remove-case', {
       params: {

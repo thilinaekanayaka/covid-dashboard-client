@@ -1,12 +1,6 @@
 <h2><a routerLink="/dashboard">Main</a> > Editing : <a class="case-link" routerLink="/case-detailed/{{ caseID }}">{{ caseID }}</a></h2>
 <form *ngIf="editCaseForm" [formGroup]="editCaseForm" (ngSubmit)="onSubmit(editCaseForm.value)">
     <div class="col-1-4">
-        <label for="id">
-            Case ID
-        </label>
-        <input id="id" type="text" formControlName="id">
-    </div>
-    <div class="col-1-4">
         <label for="name">
             Name
         </label>

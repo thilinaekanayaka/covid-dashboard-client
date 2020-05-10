@@ -46,20 +46,20 @@ export class EditCaseComponent implements OnInit {
 
   onSubmit(caseData: any) {
     console.log("submit", caseData)
-    //   this.case = {
-    //     "name": caseData["name"],
-    //     "age": caseData["age"],
-    //     "gender": this.genders.indexOf(caseData["gender"]),
-    //     "status": this.statuses.indexOf(caseData["status"]),
-    //     "location": {
-    //       "district": this.districts.indexOf(caseData["district"]),
-    //       "address": caseData["address"]
-    //     }
-    //   }
-    //   this.editCaseForm.reset();
-    //   this.syncService.createCase(this.case).subscribe(data => {
-    //     this.message = data["message"];
-    //   });
+    this.case = {
+      "_id": this.caseID,
+      "name": caseData["name"],
+      "age": caseData["age"],
+      "gender": this.genders.indexOf(caseData["gender"]),
+      "status": this.statuses.indexOf(caseData["status"]),
+      "location": {
+        "district": this.districts.indexOf(caseData["district"]),
+        "address": caseData["address"]
+      }
+    }
+    this.syncService.editCase(this.case).subscribe(data => {
+      this.message = data["message"];
+    });
   }
 
 }
