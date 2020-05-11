@@ -12,8 +12,8 @@ import { ConnectionService } from '../connection.service';
 })
 export class SubDashboardComponent implements OnInit {
   cases: any;
-  districtID: any;
-  district: any;
+  districtID: string;
+  district: string;
   statuses: any;
 
   constructor(private route: ActivatedRoute, private syncService: SyncService, private connectionService: ConnectionService) {

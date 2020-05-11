@@ -12,13 +12,13 @@ import { Statuses } from '../status';
   styleUrls: ['./edit-case.component.css']
 })
 export class EditCaseComponent implements OnInit {
-  caseID: any;
+  caseID: string;
   editCaseForm: any;
   districts: any;
   genders: any;
   statuses: any;
   case: any;
-  message: any;
+  message: string;
 
   constructor(private route: ActivatedRoute, private formBuilder: FormBuilder, private syncService: SyncService) {
     this.caseID = this.route.snapshot.paramMap.get('id');

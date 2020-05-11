@@ -11,7 +11,6 @@ import { ConnectionService } from '../connection.service';
 export class MainDashboardComponent implements OnInit {
   cases: any;
   districts: any;
-  message: any;
 
   constructor(private syncService: SyncService, private connectionService: ConnectionService) {
     this.districts = Districts;

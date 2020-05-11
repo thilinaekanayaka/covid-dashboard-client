@@ -12,17 +12,17 @@ import { ConnectionService } from '../connection.service';
   styleUrls: ['./detailed-view.component.css']
 })
 export class DetailedViewComponent implements OnInit {
-  caseID: any;
-  district: any;
-  districtID: any;
+  caseID: string;
+  district: string;
+  districtID: number;
   statuses: any;
   genders: any;
-  message: any;
-  name: any = '';
-  age: any = '';
-  status: any = '';
-  gender: any = '';
-  address: any = '';
+  message: string;
+  name: string = '';
+  age: string = '';
+  status: string = '';
+  gender: string = '';
+  address: string = '';
   caseAvailability: Boolean;
   online: Boolean;
 

@@ -14,9 +14,9 @@ export class CreateCaseComponent implements OnInit {
   createCaseForm: any;
   districts: any;
   genders: any;
-  statuses; any;
+  statuses: any;
   case: any;
-  message: any;
+  message: string;
 
   constructor(private formBuilder: FormBuilder, private syncService: SyncService) {
     this.districts = Districts;
